@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\SeriesFormRequest;
 use App\Serie;
 use Illuminate\Http\Request;
 
@@ -26,15 +27,8 @@ class SeriesController extends Controller
 
     }
 
-    public function store(Request $request)
+    public function store(SeriesFormRequest $request)
     {
-
-        $request->validate(
-            [
-                'nome' => 'required|min:3'
-
-            ]
-        );
 
         $nome = $request->nome;
 
